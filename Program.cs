@@ -17,6 +17,8 @@ namespace ExportImportObjects
             Console.ReadLine();
             FacadeWithGenerativeTypeGenerators(contacts, contractors);
             Console.ReadLine();
+            FacadeWithGenerativeTypeAndGeneratorsOtherWay(contacts, contractors);
+            Console.ReadLine();
         }
 
         private static void PrepareExampleData(out List<Contact> contacts, out List<Contractor> contractors)
@@ -88,17 +90,48 @@ namespace ExportImportObjects
                 var importedContacts2 = facade.Import<Contact>("contacts3.xlsx");
 
                 // Eksport i import Contractor
-                facade.Export(contractors, "contractors3.xlsx");
-                var importedContractors = facade.Import<Contractor>("contractors3.xlsx");
+                facade.Export(contractors, "contractors3.csv");
+                var importedContractors = facade.Import<Contractor>("contractors3.csv");
                 facade.Export(contractors, "contractors3.xlsx");
                 var importedContractors2 = facade.Import<Contractor>("contractors3.xlsx");
                 WriteResults(importedContacts, importedContractors);
-                WriteResults(importedContacts, importedContractors);
+                WriteResults(importedContacts2, importedContractors2);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        private static void FacadeWithGenerativeTypeAndGeneratorsOtherWay(List<Contact> contacts, List<Contractor> contractors)
+        {
+            Console.WriteLine("Export/import z generowanym typem generatora dla konkretnego typu bez generycznych klas generatorów");
+            var facade = new ExportImportFacade4();
+
+            // Eksport i import Contact
+            facade.Export(contacts, "contacts4.csv");
+            var importedContacts = facade.Import<Contact>("contacts4.csv");
+            facade.Export(contacts, "contacts4.xlsx");
+            var importedContacts2 = facade.Import<Contact>("contacts4.xlsx");
+            facade.Export(contacts, "contacts4.json");
+            var importedContacts3 = facade.Import<Contact>("contacts4.json");
+            facade.Export(contacts, "contacts4.xml");
+            var importedContacts4 = facade.Import<Contact>("contacts4.xml");
+            facade.Export(contacts, "contacts4.html");
+
+            // Eksport i import Contractor
+            facade.Export(contractors, "contractors4.csv");
+            var importedContractors = facade.Import<Contractor>("contractors4.csv");
+            facade.Export(contractors, "contractors4.xlsx");
+            var importedContractors2 = facade.Import<Contractor>("contractors4.xlsx");
+            facade.Export(contractors, "contractors4.json");
+            var importedContractors3 = facade.Import<Contractor>("contractors4.json");
+            facade.Export(contractors, "contractors4.xml");
+            var importedContractors4 = facade.Import<Contractor>("contractors4.xml");
+            facade.Export(contractors, "contractors4.html");
+
+            WriteResults(importedContacts, importedContractors);
+            WriteResults(importedContacts2, importedContractors2);
         }
 
         private static void WriteResults(IEnumerable<Contact> importedContacts, IEnumerable<Contractor> importedContractors)
@@ -115,6 +148,7 @@ namespace ExportImportObjects
             {
                 Console.WriteLine($"Name: {contractor.Name}, Company: {contractor.Company}");
             }
+            Console.WriteLine();
         }
     }
 }
