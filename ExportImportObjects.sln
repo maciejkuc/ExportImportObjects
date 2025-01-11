@@ -3,12 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportImportObjects", "ExportImportObjects.csproj", "{F64B5E78-3191-4ACE-A9CA-A78A39D56C3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportImportObjects", ".\ExportImportObjects\ExportImportObjects.csproj", "{F64B5E78-3191-4ACE-A9CA-A78A39D56C3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{8DDCE99E-C3B4-457B-BC09-997E4BA6E878}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet-desktop.yml = .github\workflows\dotnet-desktop.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportImportObjectsTemplateStrategy", ".\ExportImportObjectsTemplateStrategy\ExportImportObjectsTemplateStrategy.csproj", "{DA126224-FED8-4FAA-B369-6EB5312A605E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportImportObjectsGenerative", ".\ExportImportObjectsGenerative\ExportImportObjectsGenerative.csproj", "{D89BF251-40BD-4320-AF01-A745FE386BC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +24,14 @@ Global
 		{F64B5E78-3191-4ACE-A9CA-A78A39D56C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F64B5E78-3191-4ACE-A9CA-A78A39D56C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F64B5E78-3191-4ACE-A9CA-A78A39D56C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA126224-FED8-4FAA-B369-6EB5312A605E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA126224-FED8-4FAA-B369-6EB5312A605E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA126224-FED8-4FAA-B369-6EB5312A605E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA126224-FED8-4FAA-B369-6EB5312A605E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89BF251-40BD-4320-AF01-A745FE386BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89BF251-40BD-4320-AF01-A745FE386BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89BF251-40BD-4320-AF01-A745FE386BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89BF251-40BD-4320-AF01-A745FE386BC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
