@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ExportImportObjects.Services
 {
-    internal class ContractorExcelGenerator<T> : ExcelGenerator<T>, IDataFormatGenerator<T> where T : Contractor
+    internal class ContractorExcelGenerator<T> : ExcelGenerator<T> where T : Contractor
     {
         protected override void WriteHeaders(ExcelWorksheet worksheet)
         {
@@ -24,16 +24,6 @@ namespace ExportImportObjects.Services
             var name = worksheet.Cells[row, 1].Value.ToString();
             var company = worksheet.Cells[row, 2].Value.ToString();
             return new Contractor { Name = name, Company = company } as T;
-        }
-
-        public override void Export(IEnumerable<T> objects, string filePath)
-        {
-            base.Export(objects, filePath);
-        }
-
-        public override IEnumerable<T> Import(string filePath)
-        {
-            return base.Import(filePath);
         }
     }
 }

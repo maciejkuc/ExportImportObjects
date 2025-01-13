@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ExportImportObjects.Services
 {
-    internal class ContactCsvGenerator<T> : CsvGenerator<T>, IDataFormatGenerator<T> where T : Contact
+    internal class ContactCsvGenerator<T> : CsvGenerator<T> where T : Contact
     {
         protected override void WriteHeaders(StreamWriter writer)
         {
@@ -21,16 +21,6 @@ namespace ExportImportObjects.Services
         {
             var parts = line.Split(',');
             return new Contact { Name = parts[0], Email = parts[1] } as T;
-        }
-
-        public override void Export(IEnumerable<T> objects, string filePath)
-        {
-            base.Export(objects, filePath);
-        }
-
-        public override IEnumerable<T> Import(string filePath)
-        {
-            return base.Import(filePath);
         }
     }
 }
