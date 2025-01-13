@@ -104,6 +104,7 @@
     <Compile Include="Interfaces\IDataFormatGenerator.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Contractor.cs" />
+    <Compile Include="Models\FileExtensions.cs" />
     <Compile Include="Services\Contact\ContactCsvGenerator.cs" />
     <Compile Include="Services\Contact\ContactExcelGenerator.cs" />
     <Compile Include="Services\Contractor\ContractorCsvGenerator.cs" />

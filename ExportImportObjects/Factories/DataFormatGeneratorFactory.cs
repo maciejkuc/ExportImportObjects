@@ -11,16 +11,16 @@ namespace ExportImportObjects.Factories
     {
         private static readonly Dictionary<(string, Type), IDataFormatGenerator> Generators = new Dictionary<(string, Type), IDataFormatGenerator>()
         {
-            { (".csv", typeof(Contact)), new ContactCsvGenerator() },
-            { (".csv", typeof(Contractor)), new ContractorCsvGenerator() },
-            { (".xlsx", typeof(Contact)), new ContactExcelGenerator() },
-            { (".xlsx", typeof(Contractor)), new ContractorExcelGenerator() },
-            { (".json", typeof(Contact)), new JsonGenerator() },
-            { (".json", typeof(Contractor)), new NewtonsoftJsonGenerator() },
-            { (".html", typeof(Contact)), new HtmlGenerator() },
-            { (".html", typeof(Contractor)), new HtmlGenerator() },
-            { (".xml", typeof(Contact)), new XmlGenerator() },
-            { (".xml", typeof(Contractor)), new XmlGenerator() }
+            { (FileExtensions.Csv, typeof(Contact)), new ContactCsvGenerator() },
+            { (FileExtensions.Csv, typeof(Contractor)), new ContractorCsvGenerator() },
+            { (FileExtensions.Excel, typeof(Contact)), new ContactExcelGenerator() },
+            { (FileExtensions.Excel, typeof(Contractor)), new ContractorExcelGenerator() },
+            { (FileExtensions.Json, typeof(Contact)), new JsonGenerator() },
+            { (FileExtensions.Json, typeof(Contractor)), new NewtonsoftJsonGenerator() },
+            { (FileExtensions.Html, typeof(Contact)), new HtmlGenerator() },
+            { (FileExtensions.Html, typeof(Contractor)), new HtmlGenerator() },
+            { (FileExtensions.Xml, typeof(Contact)), new XmlGenerator() },
+            { (FileExtensions.Xml, typeof(Contractor)), new XmlGenerator() }
         };
 
         public static IDataFormatGenerator GetGenerator<T>(string filePath)
